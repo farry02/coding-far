@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <link rel="stylesheet"href="home.css">
+    </head>
+    <body>
+
+        <ul>
+            <li><a href="home.html">home</a></li>
+            <li><a href="biography.html">biography</a></li>
+            <li><a href="education.html">education</a></li>
+            <li><a href="family.html">family</a></li>
+            <li><a href="friends.html">friends</a></li>
+            <li><a href="musictest.html">musictest</a></li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <audio controls="" src="./audio/codingbgmsong2.mp3"></audio>
+
+
+        </style>
+
+        <h1><a name="profile">Profile</a></h1>
+        <p>
+            <img src="image/gambarcoding3.jpg" align="left" width="300px" border=15">
+            <div class="background">
+                <div class="layer">
+                </div>
+            </div>
+            </p>
+    
+            <p>
+                Levi Ackerman often formally referred to as Captain Levi (リヴァイ兵長 Rivai Heichō?), is the squad captain (兵士長 Heishichō?, lit. "leader of the soldiers") of the Special Operations Squad within the Survey Corps and is 
+                widely known as humanity's strongest soldier.
+            </p>
+            <p>
+            As a result of his early childhood years, Levi is described as a "clean freak" by those who know him personally as he prefers his environment and himself to be spotlessly clean. He is averse to having either himself or his equipment soiled, and has been known to wipe down his blood-smeared blades while still on the battlefield. However, he will not hesitate to touch filth if he deems it necessary.
+            
+            Despite his preoccupation with cleanliness, Levi is not very approachable. He rarely shows emotion, giving a cold impression to others. His manner of speaking tends to be very blunt, even insulting, and his comments are often coarse or inappropriate. He is not above provoking or belittling those who oppose or irritate him. His sense of humor tends toward the vulgar, insulting, and dark. All of this makes him unsettling to a great number of people.
+            </p>
+            <p>
+
+            <img src="image/gambarcoding3">
+
+            <br>
+            <br>
+            <br>
+            <!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="canvas" width="200" height="200"
+style="background-color:#333">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+</body>
+</html>
+</html>
